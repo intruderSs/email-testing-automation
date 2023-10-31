@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dash from './components/Dash';
-import Email from "./components/Email";
+import EmailLinkExtractor from "./components/EmailLinkExtractor";
 
 const App = () => {
 
@@ -10,6 +10,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Dash/> }></Route>
+          <Route exact path="/email" element={<EmailLinkExtractor/> }></Route>
         </Routes>
       </BrowserRouter>
     </>

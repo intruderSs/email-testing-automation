@@ -41,7 +41,6 @@ function Dash() {
         event.preventDefault();
         const validUtm = utmPattern.test(ac);
         if (validUtm) {
-
             Links.forEach(link => {
                 const isValidLink = validLinkRegex.test(link);
                 if (isValidLink) {
@@ -70,8 +69,10 @@ function Dash() {
             if (utmObject.hasOwnProperty(key) && typeof utmObject[key] === 'string') {
                 utmObject[key] = utmObject[key].replace(/%/g, '');
                 utmObject[key] = utmObject[key].replace(/_/g, '_');
+                utmObject[key] = utmObject[key].replace(/\u200B/g, "");
             }
         }
+        console.log(utmObject);
         setUtmObj(utmObject);
         viewResult.current.click();
     }
