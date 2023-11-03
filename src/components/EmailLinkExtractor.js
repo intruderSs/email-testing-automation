@@ -46,13 +46,12 @@ function EmailLinkExtractor() {
   const handleValidate = async (e) => {
     e.preventDefault();
     filteredLinks.forEach((element) => {
-      const newTab = window.open(element, "_blank");
-      console.log(newTab.location);
+      window.open(element, "_blank");
     });
   };
 
-   console.log("Filtered Links", filteredLinks);
-   
+  console.log("Filtered Links", filteredLinks);
+
   return (
     <>
       <div>
